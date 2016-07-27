@@ -1,0 +1,84 @@
+<script>
+  $('#month1').monthpicker();
+    $('#month2').monthpicker();
+</script>
+<style>
+  .ui-datepicker-calendar {
+    display: none;
+ }
+</style>
+<ion-view view-title="Tra cứu">
+  <ion-content class="padding">
+    <div class="list card" style="top:0">
+      <div class="item item-body">
+        <div>
+         
+        </div>
+      </div>
+    </div>
+    
+    <div class="list card" style="bottom:0">
+      <div class="item item-body">
+        <div>
+          <label class="item item-input" style="padding-bottom:13px;margin-bottom:7px;border:0;-webkit-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+-moz-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+box-shadow: 0px 17px 27px -19px rgba(0,0,0,0.64);">
+            <span style="margin-left: -15px;">Chọn ngày:</span>
+          <input type="text" onfocus="(this.type='date')" placeholder="Ngày / Tháng / Năm" id="today" style="border: 1px solid #F0F0F0; border-radius:5px; margin-left:5px; padding-left:5px; text-align: center;">    
+        </label>
+       <a href="#tab/home"><button class="btns1">Tra cứu</button></a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="list card" style="bottom:0">
+      <div class="item item-body" style="padding-left:2px; padding-right:2px;">
+          <label class="item item-input" style="padding-bottom:13px;margin-bottom:7px;border:0;-webkit-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+-moz-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+box-shadow: 0px 17px 27px -19px rgba(0,0,0,0.64);">
+            <span style="margin-left: -15px;">Chọn thời gian:</span>
+          <!--<input type="date" id="today" style="border: 1px solid #F0F0F0; border-radius:5px; margin-left:5px; padding-left:5px; text-align: center;">    -->
+        <input type="text" placeholder="Tháng / Năm" id="month1" style="border: 1px solid #F0F0F0; border-radius:5px; margin-left:5px; padding-left:5px; text-align: center;">
+        </label>
+       <a href="#tab/home"><button class="btns1">Tra cứu</button></a>
+      </div>
+    </div>
+    
+    <div class="list card" style="bottom:0">
+      <div class="item item-body" style="padding-left:2px; padding-right:2px;">
+          <label class="item item-input">
+            <span style="margin-left: -15px;">Chọn thời gian:</span>
+          <input type="text"  placeholder="Tháng / Năm" id="month2" style="border: 1px solid #F0F0F0; border-radius:5px; margin-left:5px; padding-left:5px; text-align: center;"> 
+        </label>
+        <label class="item item-input" style="padding-bottom:13px;margin-bottom:7px;border:0;-webkit-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+-moz-box-shadow: 0px 17px 27px -18px rgba(0,0,0,0.64);
+box-shadow: 0px 17px 27px -19px rgba(0,0,0,0.64);">
+            <span style="margin-left: -15px;">Chọn kỳ</span>
+           <select class="Form-control" id="ky" name="ky" style="border: 1px solid #F0F0F0; height:30px ;border-radius:5px; margin-left:55px; padding-left:5px; margin-top:5px ;text-align: center;">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            </select>
+        </label>
+       <a href="#tab/home"><button class="btns1">Tra cứu</button></a>
+      </div>
+    </div>
+    
+     <div class="list card" style="top:0; margin-bottom: 100px;">
+      <div class="item item-body">
+        <div>
+         content !
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

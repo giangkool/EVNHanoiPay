@@ -1,0 +1,57 @@
+<ion-view view-title="<center>Chi Tiết Thanh Toán</center>" hide-back-button="false" cache-view='false'>
+   <ion-content class="padding">
+    <!--<hr/>-->
+    <div style="padding-top:0px; padding-bottom:50px">
+        <table style="padding:1px">
+                        <tr>	<center>	
+                                    <select class="item item-input" style="width:95%; height:40px; border-radius:5px;">
+                                    <option value="volvo">Thanh toán tất cả hóa đơn</option>
+                                    <option value="volvo">{{invoices.data.note}}</option>
+                                    </select>
+                                </center>
+							</tr>
+                        <tr>
+                            <td><h5 style="color:#000; padding-top:5px; width:130px">Mã khách hàng :</h5></td>
+                                <td style="color:#056FAB">{{invoices.data.customer._id}}</td>
+                        </tr>
+                        <tr>
+                            <td><h5 style="color:#000; padding-top:5px; width:120px">Tên khách hàng: </h5></td>
+                            <td>{{invoices.data.customer.name}}</td>
+                        </tr>
+                        <tr>
+                            <td><h5 style="color:#000; padding-top:5px; width:130px">Mã hóa đơn :</h5></td>
+                                <td style="color:#598FDF">{{invoices.data._id}}</td>
+                        </tr>
+                         <tr>
+                            <td><h5 style="color:#000; padding-top:5px; width:130px">Số tiền thanh toán :</h5></td>
+                                <td style="color:#598FDF">{{invoices.data.payment.bill_amount}} VNĐ</td>
+                                <!--<a style="padding-left:5px; color:red" onclick="hideinput()">chi tiết</a>-->
+                        </tr>
+                         <tr ng-hide="invoices.data.status == 'paid'">
+                                <td><h5 style="color:#000; padding-top:5px; width:130px">Trạng thái: </h5></td>
+                                <td style="color:red">Chưa thanh toán</td>
+                        </tr>
+                        <tr ng-hide="invoices.data.status == 'un_paid'">
+                                <td><h5 style="color:#000; padding-top:5px; width:130px">Trạng thái: </h5></td>
+                                <td style="color:#598FDF">Đã thanh toán</td>
+                            </tr>
+                    </table>
+                         <center ng-hide="invoices.data.status == 'paid'">
+                            <img src="img/color-stripe.jpg" style="margin:auto; width:300px; display:block; margin-bottom:5px; margin-top:15px">
+                            <a class="btnpayment button" ng-click="popup()" style="color:#fff; margin-right:3px; margin-left:-1px">TAPPAY</a>
+                            <!--href="#/tab/list-bank"-->
+                            <a class="btnpayment2 button" href="#/tab/list-bank/{{invoices.data.customer._id}}/{{invoices.data.payment.debt_amount}}" ng-click="searchContent2();" style="color:#fff">ATM</a>
+                            <a class="btnpayment button" ng-click="popup()" style="color:#fff; background:#43753A">CREDIT</a>
+                            <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
+                        </center>
+                        <center ng-hide="invoices.data.status == 'paid'">
+                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; background:#EE560B; margin-right:3px; margin-left:-1px">THẺ CÀO</a>
+                            <!--<a class="btnpayment2 button" href="#" ng-click="popup()" ng-click="searchContent2();" style="color:#fff; font-size:12px; background:#7FBA00; margin-right:0px">TRẢ TRƯỚC</a>
+                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; background:#E5001D; font-size:14px">EASYCARD</a>-->
+                            <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
+                            <a class="btnpayment2 button" href="#" ng-click="popup()" ng-click="searchContent2();" style="color:#fff; font-size:13px; background:#4862A3">FACEBOOK</a>
+                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; margin-right:0px; background:#26C9DA">NHU CẦU</a>
+                        </center>
+    </div>
+   </ion-content>
+</ion-view>

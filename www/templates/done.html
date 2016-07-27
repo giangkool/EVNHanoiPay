@@ -1,0 +1,48 @@
+<ion-modal-view>
+    <ion-view view-title='' style="background-color : transparent;">
+        <ion-content padding="'true'" class="has-header">
+             <form>
+             <div class="list card">
+                <div class="item item-divider"><center>Giao dịch thành công</center></div>
+                <div class="padding">
+                    <table>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Mã khách hàng: </h5></td>
+                                <td>{{user.customer_code}}</td>
+                            </tr>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Mã giao dịch: </h5></td>
+                                <td>ATM201616260616</td>
+                            </tr>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Tên khách hàng: </h5></td>
+                                <td>{{user.full_name}}</td>
+                            </tr>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Địa chỉ: </h5></td>
+                                <td>{{user.address}}</td>
+                            </tr>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Điện thoại: </h5></td>
+                                <td>{{user.mobile}}</td>
+                            </tr>
+                            <tr>
+                                <td><h5 style="color:#000; padding-top:5px; width:120px">Thanh toán: </h5></td>
+                                <td>Đã thanh toán</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                     <center>
+                                        <!--<button class="btnpayment2 button" type="submit" ng-click="searchContent(search_data);">Đồng ý</button>-->
+                                        <a class="btnpayment button" type="submit" style="color:#fff" href="#/tab/payment" ng-click="closedone()">Đồng ý</a>
+                                    </center>
+                                </td>
+                            </tr>
+                    </table>   
+                </div>
+             </div>
+        </form>
+        </ion-content>
+    </ion-view>
+</ion-modal-view>
+

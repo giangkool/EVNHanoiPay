@@ -1,0 +1,25 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Đổi mật khẩu</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closepopup()">X</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doChangePass()" name="changePassForm" novalidate>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Mật khẩu hiện tại</span>
+          <input type="password" ng-model="loginData.old_pass" required>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Mật khẩu mới</span>
+          <input type="password" ng-model="loginData.new_pass" required>
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit" ng-disabled="changePassForm.$invalid">Đồng ý</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,80 @@
+  <style>
+  .img{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border:3px solid #F8F8F8;
+    margin-top: 10px;
+  }
+  .ch{
+         width: 47%;
+         height: 50px;
+         text-align: center;
+         margin-top: 20px;
+         font-weight: 700;
+     }
+     .ciclep{
+         border-radius: 16px;
+         margin-left: 20px;
+         font-size: 40px;
+         padding-left: 10px;
+         padding-right: 10px;
+         color: #fff;
+     }
+     .dmenu{
+       width: 20%;
+       max-width: 130px;
+       height: 50px;
+       border:none;
+     }
+      .item-complex.item-icon-left .item-content {
+      padding-left: 54px;
+      padding-right: 30px;
+    }
+ </style>
+<ion-view cache-view="false" view-title="<center>Tài khoản Tappay</center>">
+    <ion-content class="padding">  
+        <div class="button-bar" style="width:100%; margin-top:0px;">
+                      
+                      <div class="ch">
+                          <a ng-click="popup()" class="ciclep ion-ios-person-outline" style="border: 1px solid #A4489B;background:#A4489B;padding-left:14px; padding-right:14px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a> 
+                       <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Thông tin tài khoản</span>
+                      </div>
+                      
+                      <div class="ch"> 
+                          <a ng-click="popup()" class="ciclep ion-android-time" style="border: 1px solid #2EB056;background:#2EB056 ;padding-left: 11px; padding-right: 11px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a>
+                          <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Lịch sử giao dịch</span>
+                      </div> 
+        </div>
+        <div class="button-bar" style="width:100%; margin-top:30px;">
+         
+                    <div class="ch">
+                          <a ng-click="popup()" class="ciclep ion-cash" style="border: 1px solid #00838F;background:#00838F;padding-left:7px; padding-right:7px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a> 
+                       <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Nạp tiền</span>
+                      </div>
+                       <!--ng-href="#/app/ebank-inside"-->
+                      <div class="ch"> 
+                          <a ng-click="popup()" class="ciclep ion-folder" style="border: 1px solid #2A5598; background:#2A5598 ;padding-left: 13px; padding-right: 13px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a>
+                          <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Rút tiền</span>
+                      </div> 
+                     
+        </div>
+        <div class="button-bar" style="width:100%; margin-top:40px;">
+                      <div class="ch">
+                          <a ng-click="popup()" class="ciclep ion-disc" style="border: 1px solid #F10000;background:#F10000;padding-left:10px; padding-right:10px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a> 
+                       <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Chuyển khoản nội bộ</span>
+                      </div>
+                      <div class="ch"> 
+                          <a ng-click="popup()" class="ciclep ion-earth" style="border: 1px solid #FF9807; background:#FF9807 ;padding-left: 10px; padding-right: 10px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a>
+                          <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Chuyển khoản khác ví</span>
+                      </div> 
+        </div>
+         <div class="button-bar" style="width:100%; margin-top:40px;">
+                      <div class="ch">
+                          <a ng-click="popup()"  class="ciclep ion-ios-search-strong" style="border: 1px solid #398BF7;background:#398BF7;padding-left:14px; padding-right:13px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);"></a> 
+                       <br/><br/><span style="color:#000;margin-left:15px; font-size:11px;font-weight: 500;">Mã khuyến mãi</span>
+                      </div>
+                      
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,75 @@
+<ion-view view-title="{{catalog.title}}" cache-view='false'>
+   <ion-content class="padding">
+     <form
+    <div class="list">
+        <label class="item item-input">
+    <div class="input-label">
+      Chọn Năm
+    </div>
+        <select id="year" style="text-align:center;padding-top:5px;" ng-model="year" ng-init="year='2016'">
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015" selected="selected">2015</option>
+            <option value="2016">2016</option>
+        </select>
+  </label>
+    <center>
+      <button class="btnlogin button"  ng-click="searchChartContent(year)" style="color:#fff">Tra cứu</button>
+    </center>
+    </form>
+    <div ng-hide="datagraph">
+      Không có thông tin nào!
+    </div>
+    <div id="contentDiv"  ng-repeat="content in datagraph" style="padding-bottom:30px">
+        <div style="border:1px solid navy;">
+    <h5>{{title1}}</h5>
+    <canvas id="bar" class= "chart chart-bar" data="[content.san_luong_nam_truoc,content.san_luong]" labels="content.thang" 
+    series="series1" height="100px" width="100%"
+    chart-legend="true" 
+    colours = "[{
+    fillColor: '#2054E5',
+    strokeColor: '#2054E5',
+    highlightFill: '#2054E5',
+    highlightStroke: '#2054E5'
+},{
+     fillColor: '#FFFF00',
+    strokeColor: '#FFFF00',
+    highlightFill: '#FFFF00',
+    highlightStroke: '#FFFF00'
+}]"></canvas>
+</div>
+<div style="border:1px solid navy;">
+    <div style="clear: both;margin-top: 10px;"><h5>{{title2}}</h5></div>
+    <canvas id="bar" class="chart chart-bar" data="[content.tong_tien_nam_truoc,content.tong_tien]" labels="content.thang"
+    chart-legend="true" 
+    series="series2" height="100px" width="100%" colours = "[{
+     fillColor: '#2054E5',
+    strokeColor: '#2054E5',
+    highlightFill: '#2054E5',
+    highlightStroke: '#2054E5'
+},{
+   fillColor: '#FFFF00',
+    strokeColor: '#FFFF00',
+    highlightFill: '#FFFF00',
+    highlightStroke: '#FFFF00'
+}]"></canvas>
+    </div>
+         <script>
+        //     var e = document.getElementById("year");
+        //     var stryear = e.options[e.selectedIndex].value;
+        //     var strlyear=stryear-1;
+        //    document.getElementById("y1").innerText=stryear;
+        //    document.getElementById("y2").innerText=strlyear;
+        //    document.getElementById("y3").innerText=stryear;
+        //    document.getElementById("y4").innerText=strlyear;
+        //    document.getElementById("y5").innerText=stryear;
+        //    document.getElementById("y6").innerText=strlyear;
+        //    document.getElementById("y7").innerText=stryear;
+        //    document.getElementById("y8").innerText=strlyear;
+    </script>
+    </div>
+    <hr style="clear:both"/>
+    </div>
+</div>
+   </ion-content>
+</ion-view>

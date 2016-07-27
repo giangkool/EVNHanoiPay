@@ -1,0 +1,604 @@
+<style>
+       .bgheader{
+                height:150px; margin-top:-10px;
+            }
+  .img{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    border:3px solid #F8F8F8;
+    margin-top: 10px;
+  }
+     .cicle{
+            font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+     }
+     .cicle img{
+      margin-top:-9px;
+     }
+     .cicle1{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: -90px;
+            margin-left: 35px;
+            margin-right: 30px;
+     }
+     .cicle1 img{
+      margin-top:-9px;
+     }
+     .icon1{
+        font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 10px;
+            margin-left: 45px;
+            margin-right: 30px; 
+     }
+      .icon1 img{
+           margin-top:-9px;
+      }
+      .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:43px;
+            margin-right: 30px; 
+      }
+       .icon2 img{
+           margin-top:-9px;
+      }
+      .theder{
+          margin-top:30px; padding-bottom:5px;
+      }
+      @media(device-width:2048px){
+           .gallery{
+              height: 500px;
+          }
+          .flickity-viewport{
+            min-height: 550px;
+          }
+            .bgheader{
+                    height: 220px;
+                    margin-top: -330px;
+            }
+           .theder{
+          margin-top:420px; padding-bottom:5px;
+      }
+           .icon1{
+                font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 50px;
+                margin-left: 620px;
+                margin-right: 30px;
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+                    font-size: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    float: left;
+                    margin-top: 200px;
+                    margin-left: -852px;
+                    margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+             font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 200px;
+            margin-left: -115px;
+            margin-right: 30px;
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+       @media(device-width:1920px){
+           .gallery{
+              height: 500px;
+          }
+          .flickity-viewport{
+            min-height: 550px;
+          }
+            .bgheader{
+                    height: 150px;
+                    margin-top: -250px;
+            }
+           .theder{
+          margin-top:420px; padding-bottom:5px;
+      }
+           .icon1{
+                font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 50px;
+                margin-left: 580px;
+                margin-right: 30px;
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+                    font-size: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    float: left;
+                    margin-top: 200px;
+                    margin-left: -820px;
+                    margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+             font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 200px;
+            margin-left: -115px;
+            margin-right: 30px;
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+      @media(device-width:1280px){
+           .gallery{
+              height: 500px;
+          }
+          .flickity-viewport{
+            min-height: 550px;
+          }
+            .bgheader{
+                    height: 150px;
+                    margin-top: -120px;
+            }
+           .theder{
+          margin-top:420px; padding-bottom:5px;
+      }
+           .icon1{
+                font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 50px;
+                margin-left: 370px;
+                margin-right: 30px;
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+                    font-size: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    float: left;
+                    margin-top: 200px;
+                    margin-left: -605px;
+                    margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+             font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 200px;
+            margin-left: -112px;
+            margin-right: 30px;
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+      
+      @media(device-width:800px)
+      {
+          .gallery{
+              height: 500px;
+          }
+          .flickity-viewport{
+            min-height: 550px;
+          }
+          .gallery-cell {
+            width: 100%;
+            height: 450px;
+            margin-top:15px;
+            margin-right: 10px;
+            counter-increment: gallery-cell;
+            text-align: center;
+            }     
+          .theder{
+          margin-top:200px; padding-bottom:5px;
+      }
+           .icon1{
+            font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 50px;
+                margin-left: 200px;
+                margin-right: 30px; 
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+                    font-size: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    float: left;
+                    margin-top: 40px;
+                    margin-left: -435px;
+                    margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:195px;
+            margin-right: 30px; 
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+      
+      @media(device-width:768px){
+          .gallery{
+              height: 500px;
+          }
+          .flickity-viewport{
+            min-height: 550px;
+          }
+          .gallery-cell {
+            width: 100%;
+            height: 450px;
+            margin-top:15px;
+            margin-right: 10px;
+            counter-increment: gallery-cell;
+            text-align: center;
+            }     
+          .theder{
+          margin-top:200px; padding-bottom:5px;
+      }
+           .icon1{
+            font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 50px;
+                margin-left: 200px;
+                margin-right: 30px; 
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+                    font-size: 40px;
+                    color: #fff;
+                    text-decoration: none;
+                    float: left;
+                    margin-top: 40px;
+                    margin-left: -435px;
+                    margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:195px;
+            margin-right: 30px; 
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+      
+      @media(device-width:360px){
+         .icon1{
+            font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 10px;
+                margin-left: 60px;
+                margin-right: 30px; 
+        }
+        .icon1 img{
+            margin-top:-9px;
+        }
+        .cicle1{
+            font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: -90px;
+                margin-left: 55px;
+                margin-right: 30px;
+        }
+        .cicle1 img{
+        margin-top:-9px;
+        }
+        .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:60px;
+            margin-right: 30px; 
+        }
+        .icon2 img{
+            margin-top:-9px;
+        }
+      }
+      /*iphone6*/
+     @media (device-width:375px) {
+            .theder{
+                margin-top:50px; padding-bottom:5px;
+            }
+             .icon1{
+                font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 10px;
+                margin-left: 65px;
+                margin-right: 30px; 
+            }
+            .icon1 img{
+                margin-top:-9px;
+            }
+             .cicle1{
+            font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            /*margin-top: 30px;*/
+            margin-left: 58px;
+            margin-right: 30px;
+            }
+            .cicle1 img{
+            margin-top:-9px;
+            }
+             .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:65px;
+            /*margin-right: 75px; */
+            }
+            .icon2 img{
+                margin-top:-9px;
+            }
+      }
+      /*iphone6plus*/
+      @media (device-width:414px) {
+                .theder{
+                margin-top:70px; padding-bottom:5px;
+            }
+            .icon1{
+                font-size: 40px;
+                color: #fff;
+                text-decoration: none;
+                float: left;
+                margin-top: 10px;
+                margin-left: 80px;
+                margin-right: 30px; 
+            }
+            .icon1 img{
+                margin-top:-9px;
+            }
+             .cicle1{
+            font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            /*margin-top: 30px;*/
+            margin-left: 70px;
+            margin-right: 30px;
+            }
+            .cicle1 img{
+            margin-top:-9px;
+            }
+             .icon2{
+          font-size: 40px;
+            color: #fff;
+            text-decoration: none;
+            float: left;
+            margin-top: 35px;
+            margin-left:79px;
+            /*margin-right: 75px; */
+            }
+            .icon2 img{
+                margin-top:-9px;
+            }
+        }
+     .dmenu{
+       width: 20%;
+       max-width: 130px;
+       height: 50px;
+       border:none;
+     }
+      .footer{
+            clear: both;
+            position: absolute;
+            z-index: 10;
+            height: 43px;
+            margin-top: 60px;
+            margin-bottom: -10px;
+            /*margin-left: -100px;
+            margin-right: -100px;*/
+            /*min-width: 118px;*/
+            min-width: 100%;
+            text-align: center;
+            font-size: 11px;
+            color: #fff;
+            bottom: 0;
+     }
+      
+      .item-complex.item-icon-left .item-content {
+      padding-left: 54px;
+      padding-right: 30px;
+    }
+    .home-header{
+        padding-bottom:10px;
+      }
+    #owl-demo .item img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .owl-buttons{
+        display: none;
+    }
+
+
+.gallery-cell {
+  width: 100%;
+  height: 300px;
+  margin-top:15px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+  text-align: center;
+}
+.flickity-prev-next-button{
+    display: none;
+}
+.flickity-page-dots {
+    display: none;
+}
+</style>
+<ion-view  hide-nav-bar="true" hide-tabs="true" cache-view="true" >
+     <!--view-title="Tra Cứu" hide-nav-bar="false" hide-tabs="false"-->
+<ion-content>
+        <center class="home-header bg">
+          <center class="bgheader">
+               <!--<img src="img/evn.png" class="oginimgtop">
+               <P class="slo">CHUYÊN NGHIÊP - VĂN MINH - HIỆU QUẢ</P>-->
+         </center>
+            <h5 style="color:#000;" class="theder">Tên Khách Hàng: {{user_info.full_name}}</h5>
+            <h5 style="color:#000">Địa chỉ: {{user_info.address}}</h5>
+            <div style="height:auto; width:80%">
+               <p style="color:#000; text-align:center;font-size: 13px;">Mã Khách Hàng: {{user_info.customer_code}}</p>
+            </div>
+        </center>
+     <div style="padding-top:6px;padding-bottom:30px;">
+                         <!--<div class="button-bar row" style="text-align:center">
+                                <div class="col">
+                                <a ng-href="#/tab/searchlist/5652931625062bee7f3e5d61/date" class="cicle"> <img src="img/lichtamngung.png" width="70px" height="70px"></a>
+                                <br/><p style="color:#000; font-size:11px;font-weight: 500;">Lịch tạm ngừng <br/>cung cấp điện</p>
+                                </div>
+                                <div class="col">
+                                    <a ng-href="#/tab/searchlist/565291c025062bee7f3e5d5c/month" class="cicle"> <img src="img/lichghisodien.png" width="70px" height="70px"></a>
+                                    <br/> <p style="color:#000; font-size:11px;font-weight: 500;">Lịch ghi chỉ số</p>
+                                </div>      
+                        </div>  
+                        
+                        <div class="button-bar row" style="text-align:center">
+                            <div class="col">
+                                        <a ng-href="#/tab/searchlist/565292d525062bee7f3e5d60/period" class="cicle"> <img src="img/chisodientieuthu.png" width="70px" height="70px"></a>
+                                        <br/><p style="color:#000; font-size:11px;font-weight: 500;">Chỉ số điện tiêu thụ</p>
+                                    </div> 
+                                    <div class="col">
+                                    <a ng-href="#/tab/searchlist/5652929e25062bee7f3e5d5e/period" class="cicle"> <img src="img/hoadon.png" width="70px" height="70px"></a>
+                                    <br/><p style="color:#000; font-size:11px;font-weight: 500;">Hoá đơn tiền điện</p>
+                                    </div>  
+                        </div>   
+                         <div class="button-bar row" style="text-align:center">
+                                    <div class="col">
+                                        <a ng-href="#/tab/chart/566e26f71a2b8c036a9f0b15" class="cicle"> <img src="img/tinhhinhtieuthudien.png" width="70px" height="70px"></a>
+                                        <br/><p style="color:#000; font-size:11px;font-weight: 500;">Tình hình tiêu thu điện</p>
+                                    </div> 
+                                    <div class="col">
+                                        <a ng-href="#/tab/listcontent/5652932c25062bee7f3e5d62" class="cicle"> <img src="img/thongtingiadien.png" width="70px" height="70px"></a>
+                                        <br/><p style="color:#000; font-size:11px;font-weight: 500;">Thông tin giá điện</p>
+                                    </div>        
+                        </div>  -->
+                        
+                         <div class="gallery js-flickity">
+                            <div class="gallery-cell">                               
+                                 <a href="#/tab/searchlist/5652931625062bee7f3e5d61/date" class="icon1"> <img src="img/lichtamngung.png" width="70px" height="70px">
+                                 <br/><p style="color:#000; font-size:11px;font-weight: 500;">Lịch tạm ngừng <br/>cung cấp điện</p></a>
+                                
+                                
+                                 <a href="#/tab/searchlist/565291c025062bee7f3e5d5c/month" class="icon1"> <img src="img/lichghisodien.png" width="70px" height="70px">
+                                 <br/> <p style="color:#000; font-size:11px;font-weight: 500;">Lịch ghi chỉ số</p></a>
+                           <hr style="display: none;"/>
+                               
+                                <a href="#/tab/searchlist/5652929e25062bee7f3e5d5e/period" class="icon2" style=""> <img src="img/hoadon.png" width="70px" height="70px">
+                                <br/><p style="color:#000; font-size:11px;font-weight: 500;">Hoá đơn tiền điện</p></a>
+                                
+                                 <a href="#/tab/searchlist/565292d525062bee7f3e5d60/period" class="cicle1" style=""> <img src="img/chisodientieuthu.png" width="70px" height="70px">
+                                <br/><p style="color:#000; font-size:11px;font-weight: 500;">Chỉ số điện tiêu thụ</p></a>
+                            </div>
+                            <div class="gallery-cell">
+                                 <a href="#/tab/chart/566e26f71a2b8c036a9f0b15" class="icon1" style="margin-right:20px"> <img src="img/tinhhinhtieuthudien.png" width="70px" height="70px">
+                                 <br/><p style="color:#000; font-size:11px;font-weight: 500;">Tình hình tiêu <br/>thu điện</p></a>
+                                
+                                 <a href="#/tab/listcontent/5652932c25062bee7f3e5d62" class="icon1" style="margin-right:20px"> <img src="img/thongtingiadien.png" width="70px" height="70px">
+                                 <br/><p style="color:#000; font-size:11px;font-weight: 500;">Thông tin giá điện</p></a>
+                            </div>
+                        </div>
+                         
+            </div>
+            <script>
+               var flkty = new Flickity( '.gallery', {
+                // options
+                cellAlign: 'left',
+                contain: true
+                });
+            </script>
+            <!--<div id="owl-example" class="owl-carousel">
+                <div class="item">
+                           
+                </div>
+                <div class="item">
+                    
+                </div>
+            </div>-->
+               
+            <!--<script src="js/owl-carousel/owl.carousel.js"></script>     
+                 <script>
+                    $(document).ready(function() {
+                        $("#owl-example").owlCarousel({
+                            slideSpeed : 300,
+                        paginationSpeed : 400,
+                        singleItem:true
+                        });
+                    });
+                 </script>-->
+    </ion-content> 
+</ion-view>
+

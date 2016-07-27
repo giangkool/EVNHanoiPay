@@ -1,0 +1,110 @@
+  <style>
+  .img{
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    border:3px solid #F8F8F8;
+    margin-top: 10px;
+  }
+  .ch{
+         width: 47%;
+         height: 50px;
+         text-align: center;
+         margin-top: 20px;
+         font-weight: 700;
+     }
+     .ciclep{
+         border-radius: 16px;
+         margin-left: 20px;
+         font-size: 40px;
+         padding-left: 10px;
+         padding-right: 10px;
+         color: #fff;
+     }
+     .dmenu{
+       width: 20%;
+       max-width: 130px;
+       height: 50px;
+       border:none;
+     }
+      .item-complex.item-icon-left .item-content {
+      padding-left: 54px;
+      padding-right: 30px;
+    }
+ </style>
+<ion-view view-title="<center>Quản lý tài khoản</center>" hide-back-button="true"  hide-nav-bar="false" hide-tabs="true" cache-view="false">
+  <ion-content>
+       <script>
+        // Include app dependency on ngMaterial
+        angular.module( 'starter', [ 'ngMdIcons' ] )         
+       </script>
+       <!--<center class="home-header bg">
+          <center style="height:150px; margin-top:-10px;">
+         </center>
+        </center>-->
+        <div style="padding-left:0px;margin-right:20px; text-align:center;padding-bottom:50px">
+            <div class="button-bar row" style="margin-top:20px; text-align:center">
+                      <div class="col" style="margin-top:7px">
+                          <a ng-href="#/tab/CSKH" class="ciclep" style="background:#008FFF; color:#008FFF; border: 1px solid #008FFF; padding-top:3px ;padding-bottom:7px; padding-left: 11px;padding-right: 14px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);  margin-bottom:-5px;">
+                          <i class="ion-android-contacts" style="color:#fff; margin-right:-10px"></i>
+                          </a>                    
+                       <br/><br/><span style="color:#000;margin-right:-15px; font-size:11px;font-weight: 500;">CSKH</span>
+                      </div> 
+                      <div class="col">
+                          <a ng-href="#/tab/tappay" class="ciclep" style="border: 1px solid #E96709; padding-top:6px; padding-bottom:3px;padding-left: 2px;padding-right: 2px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);">
+                        <img src="img/tappay.png" style="margin-bottom: -10px; margin-right:-10px">
+                          </a>                    
+                       <br/><br/><span style="color:#000;margin-right:-15px; font-size:11px;font-weight: 500;">Ví Tapay</span>
+                      </div> 
+             </div>
+             <div class="button-bar row" style="margin-top:20px; text-align:center">
+                      <div class="col">
+                           <a ng-href="#/tab/pay-card" class="ciclep" style="background:#E96709; color:#E96709; border: 1px solid #E96709; padding-top:3px; padding-bottom:5px; padding-left: 10px;padding-right: 10px;-webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56); margin-bottom:-10px;">
+                           <i class="ion-cash" style="color:#fff; margin-right:-10px; padding-top:10px"></i>
+                          </a>                    
+                       <br/><br/><span style="color:#000;margin-right:-15px; font-size:11px;font-weight: 500;">Thẻ trả trước</span>
+                      </div> 
+                      <div class="col">
+                      </div>
+             </div>
+
+          <!--<div style="text-align:left; ">
+              <table>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Mã khách hàng: </h5></td>
+                      <td>{{user_info.customer_code}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Tên khách hàng: </h5></td>
+                      <td>{{user_info.full_name}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Địa chỉ: </h5></td>
+                      <td>{{user_info.address}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Số hợp đồng: </h5></td>
+                      <td>{{user_info.contract_id}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Công tơ: </h5></td>
+                      <td>{{user_info.driver_id}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Điện thoại: </h5></td>
+                      <td>{{user_info.mobile}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Email: </h5></td>
+                      <td>{{user_info.email}}</td>
+                  </tr>
+				  <tr>
+					<td><h5 style="color:#000; padding-top:5px; width:120px">Phiên bản: </h5></td>
+					<td><label id="version">{{version_info}}</label></td>
+				  </tr>
+              </table>
+            </div>
+            <a ng-click="signOut()" class="btnout">ĐĂNG XUẤT</a>-->
+        </div>
+  </ion-content>
+</ion-view>

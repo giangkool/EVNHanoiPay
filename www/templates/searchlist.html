@@ -1,0 +1,75 @@
+
+<ion-view view-title="<center>{{catalog.title}}</center>" cache-view='false'>
+   <ion-content class="padding">
+     <form
+    <div class="list">
+        <label class="item item-input"  ng-show="query_year" >
+    <div class="input-label">
+      Chọn Năm
+    </div>
+        <select id="year" style="text-align:center;padding-top:5px;" ng-model="search_data.year">
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+        </select>
+  </label>
+      <label class="item item-input"  ng-show="query_date" >
+    <div class="input-label">
+      Chọn Ngày
+    </div>
+        <input type="text" id="day1" ng-model="search_data.date">
+  </label>
+  <label class="item item-input"  ng-show="query_month">
+    <div class="input-label">
+      Chọn Thời gian
+    </div>
+    <input type="text" placeholder="Tháng / Năm" id="month1" ng-model="search_data.month">
+    <script>
+     $('#month1').monthpicker();
+     $( "#day1" ).datepicker({ dateFormat: 'dd/mm/yy' });
+     $(document).click(function (e) {
+        var ele = $(e.target);
+        if (!ele.hasClass("hasDatepicker") && !ele.hasClass("ui-datepicker") && !ele.hasClass("ui-icon") && !$(ele).parent().parents(".ui-datepicker").length)
+            $(".hasDatepicker").datepicker("hide");
+    });
+    </script>
+  <style>
+    .ui-datepicker {
+        margin-left: -30px;
+        margin-top: 15px;
+    }
+    .ha a{
+        text-decoration: none;
+    }
+    </style>
+  </label>
+  <label class="item item-input item-select"  ng-show="query_period">
+    <div class="input-label" >
+      Chọn Kỳ
+    </div>
+    <select style="text-align:center;padding-top:5px;" ng-model="search_data.period" ng-init="search_data.period='1'">
+      <option value="1" selected="selected">1</option>
+      <option value="2" >2</option>
+      <option value="3" >3</option>
+    </select>
+  </label>
+    <center>
+      <button class="btnlogin button" ng-click="searchContent(search_data)" style="color:#fff">Tra cứu</button>
+    </center>
+    </form>
+    <!--<hr/>-->
+    <div ng-hide="contents">
+      Không có thông tin nào!
+    </div>
+    <div id="list_content"style="padding-bottom:40px">
+    <div id="contentDiv"  ng-repeat="content in contents" style="padding-bottom:5px" class="ha">
+           <!--<h3>{{content.title}}</h3>-->
+        <div ng-bind-html="content.content">
+        </div>
+        <!--<hr/>-->
+      </div>
+      </div>
+</div>
+   </ion-content>
+</ion-view>

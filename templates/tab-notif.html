@@ -1,0 +1,42 @@
+<style>
+  .items {
+     padding-right: 4px;
+     padding-left:4px; 
+}
+.list .item.item-accordion {
+  /*line-height: 38px;*/
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+  </style>
+<ion-view view-title="<center>Thông báo</center>"  hide-back-button="true">
+  <ion-content>
+      <ion-list>
+          <div style="padding-bottom:60px">
+              <div ng-repeat="content in contents">
+                <ion-item class="item-stable"
+                            ng-click="toggleGroup(content)"
+                            ng-class="{active: isGroupShown(content)}">
+                    <i class="icon" ng-class="isGroupShown(content) ? 'ion-minus' : 'ion-plus'"></i>
+                    {{content.title}}
+                </ion-item>
+                <ion-item class="item-accordion"
+                            ng-show="isGroupShown(content)"  style="padding-top:5px; padding-bottom:5px">
+                    <div ng-bind-html="content.content">
+                </div>
+                    <!--<br/>-->
+                    Ngày: {{content.creation_time}}
+                </ion-item>
+                </div> 
+          </div>
+      </ion-list>
+  </ion-content>
+</ion-view>

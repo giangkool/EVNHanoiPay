@@ -1,0 +1,94 @@
+<style>
+  .items {
+     padding-right: 4px;
+     padding-left:4px; 
+}
+.list .item.item-accordion {
+  /*line-height: 38px;*/
+  padding-top: 0;
+  padding-bottom: 0;
+  transition: 0.09s all linear;
+}
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+.catalogsl{
+    /*padding:17px;
+    padding-top: 1px;
+    padding-bottom: 10px;*/
+}
+.catalogsl a{
+    text-decoration: none;
+}
+.nofa1{
+    padding-left: 15px;
+    color: red;
+}
+.nofa2{
+    padding-left: 15px;
+    color: #969696;
+}
+.nof{
+    width: 35px;
+    height: 35px;
+    margin-bottom: -10px;
+    margin-right: 5px;
+}
+.nof1{
+    height: 35px;
+    margin-bottom: -10px;
+    margin-right: 5px;
+}
+  </style>
+<ion-view view-title="<center>Thông báo</center>"  hide-back-button="true" cache-view='false'>
+  <ion-content>
+      <ion-list>
+          <div style="padding-bottom:60px; padding-top:10px">
+              <div id="contentDiv"  ng-repeat="content in listNotif" class="catalogsl">
+                    <!--<h4>{{content.title}}</h4>-->
+                         <a ng-href="#/tab/notifdetail/{{content.id}}" class="nofa1" ng-if="!content.isread">
+                             <!--<i class="icon ion-android-notifications-none" style="font-size:20px; padding-right:7px"></i>-->
+                            <img src="img/nof.png" class="nof"/>
+                            
+                            <!--<img src="img/nof1.png" class="nof" ng-if="Isread=true"/>-->
+                            {{content.title}}
+                         </a>
+                         
+                         <a ng-href="#/tab/notifdetail/{{content.id}}" class="nofa2" ng-if="content.isread">
+                                <!--<i class="icon ion-android-notifications-none" style="font-size:20px; padding-right:7px"></i>-->
+                                <img src="img/nof1.png" class="nof1"/>
+                                
+                                <!--<img src="img/nof1.png" class="nof" ng-if="Isread=true"/>-->
+                                {{content.title}}
+                         </a>
+                         
+                          <!--<img src="img/separator.png" style="margin:auto;width:107%">-->
+                          <hr style="border-top: 1px solid #F0F0F0; margin-top:15px"/>
+                    <!--<div ng-bind-html="content.title" class="uifor">
+                    </div>-->
+                </div>
+               
+                <!--<hr style="width:80%"/>-->
+              <!--<div ng-repeat="content in contents">
+                <ion-item class="item-stable"
+                            ng-click="toggleGroup(content)"
+                            ng-class="{active: isGroupShown(content)}">
+                    <i class="icon" ng-class="isGroupShown(content) ? 'ion-minus' : 'ion-plus'"></i>
+                    {{content.title}}
+                </ion-item>
+                <ion-item class="item-accordion"
+                            ng-show="isGroupShown(content)"  style="padding-top:5px; padding-bottom:5px">
+                    <div ng-bind-html="content.content">
+                </div>
+                    <br/>
+                    Ngày: {{content.creation_time}}
+                </ion-item>
+                </div>-->
+          </div>
+      </ion-list>
+  </ion-content>
+</ion-view>

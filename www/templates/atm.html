@@ -1,0 +1,97 @@
+<style>
+    .input-label{
+        font-size: 13px;
+    }
+    /*SELECT ELEMENT WITH UNICODE SYMBOL: DOWN-ARROW (▼)*/
+            select#selectPointOfInterest
+            {
+               width                    : 185pt;
+               height                   : 35px;
+               border                   : none;
+               font-family              : Arial,  Calibri, Tahoma, Verdana;
+               font-size                : 10.5pt;
+               color                    : #000099;
+            }
+            select#selectPointOfInterest::-ms-expand {display: none;}
+            select#selectPointOfInterest option
+            {
+                margin-top: 70px;
+                padding             : 4px 10px 4px 10px;
+                font-size           : 11pt;
+                font-weight         : normal;
+            }
+            select#selectPointOfInterest option[selected]{ font-weight:100}
+            select#selectPointOfInterest option:nth-child(even) { background-color:#f5f5f5; }
+            select#selectPointOfInterest:hover {font-weight: 400;}
+            select#selectPointOfInterest:focus {font-weight: 200;}
+
+            /*LABEL FOR SELECT*/
+            label#lblSelect{ position: relative; display: inline-block;}
+            /*DOWNWARD ARROW (25bc)*/
+            label#lblSelect::after
+            {
+                content                 : "\25bc";
+                position                : absolute;
+                top                     : 0;
+                right                   : 0;
+                bottom                  : 0;
+                width                   : 20pt;
+                line-height             : 40pt;
+                vertical-align          : middle;
+                text-align              : center;
+                background              : #000099;
+                color                   : #fefefe;
+               -moz-border-radius       : 0 6px 6px 0;
+               -webkit-border-radius    : 0 6px 6px 0;
+                border-radius           : 0 6px 6px 0;
+                pointer-events          : none;
+            }
+</style>
+<ion-view view-title="<center>ATM</center>" hide-back-button="true" cache-view='false'>
+   <ion-content class="padding">
+         <form>
+            <label class="item item-input">
+            <span class="input-label" style="color:#BDBDBD">Ngân hàng</span>
+            <!--<input type="text" name="currency" class="biginput" ng-bind-html="content.value" ng-model="search_data.bank">-->
+            <select ng-model="search_data.bank" id="selectPointOfInterest" ng-options="ebank.value for ebank in ebanklist" required>
+            </select>
+            </label>
+            <label class="item item-input">
+            <span class="input-label" style="color:#BDBDBD">Tên in trên thẻ</span>
+            <input type="text" ng-model="search_data.name" required>
+            </label>
+            <label class="item item-input">
+            <span class="input-label" style="color:#BDBDBD">Số thẻ</span>
+            <input type="text" onkeypress="return number(event, this)" ng-model="search_data.numbers" required>
+            </label>
+            <label class="item item-input">
+            <span class="input-label" style="color:#BDBDBD">Ngày hiệu lực</span>
+            <input type="text" id="month" ng-model="search_data.month" required>
+            </label>
+            <center>
+                <button class="btnpayment button" type="submit" style="margin-right:5px" ng-click="searchContent(search_data); done()">Đồng ý</button>
+               <a class="btnpayment2 button" type="submit" style="margin-left:5px; color:#fff" href="#/tab/payment">Hủy</a>
+            </center>
+        </form>
+    <!--autocomplete-->
+        <script type="text/javascript" src="js/jquery.autocomplete.min.js"></script>
+        <script type="text/javascript" src="js/currency-autocomplete.js"></script> 
+        <script language="javascript">
+               
+                    $('#month').monthpicker();
+                    // $( "#month" ).datepicker({ dateFormat: 'dd/mm/yy' });
+                    $(document).click(function (e) {
+                        var ele = $(e.target);
+                        if (!ele.hasClass("hasDatepicker") && !ele.hasClass("ui-datepicker") && !ele.hasClass("ui-icon") && !$(ele).parent().parents(".ui-datepicker").length)
+                            $(".hasDatepicker").datepicker("hide");
+                    });
+                
+                    // chỉ nhập cho nhập số for firefox
+                    function number(e, kakatexto) {
+                        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                            return false;
+                        }
+                    }
+            </script>
+   </ion-content>
+</ion-view>

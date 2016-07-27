@@ -1,0 +1,47 @@
+<ion-view view-title="<center>Thông tin tài khoản</center>"  hide-nav-bar="false" hide-tabs="true" cache-view="false">
+  <ion-content>
+       <script>
+        // Include app dependency on ngMaterial
+        angular.module( 'starter', [ 'ngMdIcons' ] )         
+       </script>
+       <!--<center class="home-header bg">
+          <center style="height:150px; margin-top:-10px;">
+         </center>
+        </center>-->
+        <div style="padding-left:10px; text-align:center;padding-bottom:50px">
+          <div style="text-align:left; ">
+              <table>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Mã khách hàng: </h5></td>
+                      <td>{{user_info.customer_code}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Tên khách hàng: </h5></td>
+                      <td>{{user_info.full_name}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Địa chỉ: </h5></td>
+                      <td>{{user_info.address}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Số hợp đồng: </h5></td>
+                      <td>{{user_info.contract_id}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Công tơ: </h5></td>
+                      <td>{{user_info.driver_id}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Điện thoại: </h5></td>
+                      <td>{{user_info.mobile}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Email: </h5></td>
+                      <td>{{user_info.email}}</td>
+                  </tr>
+              </table>
+            </div>
+            <a ng-click="signOut()" class="btnout">ĐĂNG XUẤT</a>
+        </div>
+  </ion-content>
+</ion-view>

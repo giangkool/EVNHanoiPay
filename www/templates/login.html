@@ -1,0 +1,93 @@
+<style>
+    .login {
+        background: url('img/EVNHANOI3.jpg');
+        background-size: cover;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .ch {
+        width: 33%;
+        height: 50px;
+        text-align: center;
+        margin-top: 20px;
+        font-weight: 700;
+    }
+    
+    .cicle {
+        border-radius: 100px;
+        /*margin-left: 20px;*/
+        font-size: 40px;
+        /*padding-left: 10px;
+         padding-right: 10px;*/
+        color: #fff;
+    }
+</style>
+<script>
+    $(document).ready(function(){
+        $(".loading").hide();
+        // $("#device").hide();
+
+            $("#btnlogin").click(function(){
+                $(".loading").show();
+            });
+        });
+</script>
+<ion-view title="ENV Hà Nội - iCare" cache-view="false" hide-nav-bar="true" hide-tabs="true" class="bg">
+    <ion-content padding="'true'" class="has-header">
+        <center style="height:130px;">
+            <!--<img src="img/evn.png" class="oginimgtop">-->
+            <!--<P class="slo">CHUYÊN NGHIÊP - VĂN MINH - HIỆU QUẢ</P>-->
+        </center>
+        <div class="loading">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <form name="loginForm" class="login-form" novalidate ng-hide="user_info">
+            <ion-list>
+                <label class="item item-input ion-android-person">
+                    <!--<span class="input-label" style="padding-left:5px">Tên truy cập</span>-->
+                    <input type="text" placeholder="Mã khách hàng" ng-model="user.username" style="padding-left:20px" required>
+                </label>
+                <label class="item item-input ion-android-lock">
+                    <!--<span class="input-label">Mật khẩu</span>-->
+                    <input type="password" placeholder="Mật khẩu" ng-model="user.password" style="padding-left:20px" required>
+                </label>
+                <div id="device" class="spacer" style="height: 10px;">
+                </div>
+                <center>
+                    <span><strong class="color-assertive" style="color:red" ng-if="error_message">{{error_message}}</strong></span>
+                    <button id="btnlogin" class="btnlogin button" ng-click="signIn(user)">ĐĂNG NHẬP</button>
+                    <div class="spacer" style="height: 10px;"></div>
+                    <a class="amk">Quên mật khẩu ?</a>
+                </center>
+            </ion-list>
+        </form>
+
+        <!--<form name="change_pass_form" class="list" novalidate ng-show="user_info">
+            <ion-list>
+                <label class="item item-input ion-android-lock">
+                    <input type="password" placeholder="Mật khẩu hiện tại" ng-model="changepass.old_pass" 
+                    style="padding-left:20px" required>
+                </label>
+                <label class="item item-input ion-android-lock">
+                    <input type="password" placeholder="Mật khẩu mới" ng-model="changepass.new_pass" style="padding-left:20px" required>
+                </label>
+                <div class="spacer" style="height: 10px;"></div>
+            <strong class="color-assertive" style="color:red" ng-if="error_message">{{error_message}}</strong>
+            <button class="btnlogin" ng-click="signOut()">ĐĂNG XUẤT</button>
+            </ion-list>   
+        </form>-->
+        <center style="padding-top:40px; color:#fff; padding-bottom:40px">
+            <label id="version"></label>
+            <label>{{version_info}}</label>
+            <!--<button class="btnlogin button" ng-click="signOut()" ng-show="user_info">ĐĂNG XUẤT</button>-->
+        </center>
+    </ion-content>
+</ion-view>

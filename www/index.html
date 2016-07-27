@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/angular-chart.css">
+    <link href="css/style.css" rel="stylesheet">
+
+     <!--datepicker-->
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+    <script src="js/jquery.mtz.monthpicker.js"></script>
+  
+    <!--<link rel="stylesheet" href="js/owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="js/owl-carousel/owl.theme.css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flickity/1.1.2/flickity.pkgd.min.js"></script>
+
+    <!--password MD5-->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+    <script src="js/md5.min.js"></script>
+    
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+    
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js"></script>
+    <!-- cordova script (this will be a 404 during development) -->
+    <!--<script src="cordova.js"></script>-->
+    <script src="lib/ionic/js/angular/angular-resource.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="lib/ionic/js/angular/angular-chart.js"></script>
+    <!-- your app's js -->
+    
+    
+    <script src="js/app.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+	
+    <script>
+        (function() {
+          if ("-ms-user-select" in document.documentElement.style && navigator.userAgent.match(/IEMobile/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(
+              document.createTextNode("@-ms-viewport{width:auto!important}")
+            );
+            document.getElementsByTagName("head")[0].appendChild(msViewportStyle);
+          }
+        })();
+        
+        // open link in browser mobile
+        window.addEventListener('load', function () {    
+        $(document).on('click', 'a[target="_system"],a[target="_blank"]', function (e) {
+                e.preventDefault();
+                var url = this.href;
+                window.open(url,"_system");                    
+        });
+        });
+    </script>
+    <script type="text/javascript" charset="utf-8">
+    // Wait for device API libraries to load
+    //
+    function onLoad() {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    }
+    
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        // Register the event listener
+        document.addEventListener("backbutton", onBackKeyDown, false);
+        cordova.plugins.notification.badge.hasPermission(function (granted) {
+            console.log('Permission has been granted: ' + granted);
+        });
+        cordova.plugins.notification.badge.registerPermission(function (granted) {
+            console.log('Permission has been granted: ' + granted);
+        });
+        
+        // var appv = document.getElementById('version');
+		// cordova.getAppVersion.getVersionNumber().then(function (version) {
+		// 	 appv.innerHTML = "v." + version; 
+		// });
+        //appv.innerHTML = "V. "+ window.cordova.plugins.version.getAppVersion();
+        // alert("checking...");
+        // var platform = document.getElementById('platform');
+        // var uid = document.getElementById('uuid');
+        // uid.value = device.uuid;
+        // platform.value = device.platform;
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+        event.preventDefault(); // EDIT
+        navigator.app.exitApp(); // exit the app
+    }
+    </script>
+  </head>
+  <body ng-app="starter"  onload="onLoad()">  
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button >
+      </ion-nav-back-button>
+    </ion-nav-bar>
+
+    <ion-nav-view>      
+    </ion-nav-view>
+    
+  </body>
+</html>

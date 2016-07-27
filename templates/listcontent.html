@@ -1,0 +1,43 @@
+<style>
+    .uifor{
+        height: auto;
+        /*margin-bottom: 100px;*/
+    }
+    .uifor p {
+        color: #3498DB;
+    }
+    .uifor a{
+        text-decoration: none;
+    }
+    .uifor h4{
+        color: red;
+    }
+    .uifor hr{
+        margin-bottom: -15px;
+    }
+    .uifor h3{
+        text-align: center;
+        font-size: 22px;
+        color: #800000;
+    }
+    #ret{
+        border:1px solid red;
+    }
+    .uifor table{
+        font-size: 12px;
+    }
+
+    .uifor table p{
+        color: #000;
+        text-align: left;
+    }
+</style>
+<ion-view view-title="<center>{{catalog.title}}</center>" cache-view='false'>
+   <ion-content class="padding">
+    <div id="contentDiv"  ng-repeat="content in contents" style="padding-bottom:50px;">
+           <!--<h4>{{content.title}}</h4>-->
+        <div ng-bind-html="content.content" class="uifor">
+        </div>
+      </div>
+   </ion-content>
+</ion-view>

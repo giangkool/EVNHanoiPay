@@ -1,0 +1,48 @@
+<ion-view view-title="<center>Thanh Toán</center>" hide-back-button="true" cache-view='false'>
+   <ion-content class="padding">
+      <label class="item item-input">
+        <div class="input-label" style="font-size:14px">
+             Mã khách hàng
+        </div>
+        <input type="text" ng-model="user.customerId" placeholder=" bấm tra cứu để bắt đầu">
+      </label>
+  
+    <center>
+      <button class="btnlogin button" ng-click="pay_do(user)" style="color:#fff">Tra cứu</button>
+    </center>
+    <!--<hr/>-->
+    <div ng-hide="pay" style="padding-top:20px">
+      Không có dữ liệu!
+    </div>
+      
+    <!--<div ng-hide="!pay" style="padding-top:15px; padding-bottom:50px">
+        <table>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Mã khách hàng: </h5></td>
+                      <td>{{user.customer_code}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Tên khách hàng: </h5></td>
+                      <td>{{user.full_name}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Địa chỉ: </h5></td>
+                      <td>{{user.address}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Điện thoại: </h5></td>
+                      <td>{{user.mobile}}</td>
+                  </tr>
+                  <tr>
+                      <td><h5 style="color:#000; padding-top:5px; width:120px">Thanh toán: </h5></td>
+                      <td>Chưa thanh toán</td>
+                  </tr>
+        </table>   
+            <center ng-hide="!pay">
+                <img src="img/color-stripe.jpg" style="margin:auto; width:300px; display:block; margin-bottom:5px; margin-top:15px">
+                <a class="btnpayment2 button" href="#/tab/tappay" style="color:#fff;">TAPPAY</a>
+                <a class="btnpayment button" href="#/tab/atm" style="color:#fff">ATM</a>
+            </center>
+    </div>-->
+   </ion-content>
+</ion-view>
