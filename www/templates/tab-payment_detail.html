@@ -38,19 +38,19 @@
                     </table>
                          <center ng-hide="invoices.data.status == 'paid'">
                             <img src="img/color-stripe.jpg" style="margin:auto; width:300px; display:block; margin-bottom:5px; margin-top:15px">
-                            <a class="btnpayment button" ng-click="popup()" style="color:#fff; margin-right:3px; margin-left:-1px">TAPPAY</a>
+                            <a class="btnpayment button" ng-click="popup()" style="color:#fff; margin-right:3px; margin-left:-1px">TK Bank</a>
                             <!--href="#/tab/list-bank"-->
                             <a class="btnpayment2 button" href="#/tab/list-bank/{{invoices.data.customer._id}}/{{invoices.data.payment.debt_amount}}" ng-click="searchContent2();" style="color:#fff">ATM</a>
                             <a class="btnpayment button" ng-click="popup()" style="color:#fff; background:#43753A">CREDIT</a>
                             <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
                         </center>
                         <center ng-hide="invoices.data.status == 'paid'">
-                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; background:#EE560B; margin-right:3px; margin-left:-1px">THẺ CÀO</a>
+                            <!--<a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; background:#EE560B; margin-right:3px; margin-left:-1px">THẺ CÀO</a>-->
                             <!--<a class="btnpayment2 button" href="#" ng-click="popup()" ng-click="searchContent2();" style="color:#fff; font-size:12px; background:#7FBA00; margin-right:0px">TRẢ TRƯỚC</a>
                             <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; background:#E5001D; font-size:14px">EASYCARD</a>-->
                             <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
-                            <a class="btnpayment2 button" href="#" ng-click="popup()" ng-click="searchContent2();" style="color:#fff; font-size:13px; background:#4862A3">FACEBOOK</a>
-                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; margin-right:0px; background:#26C9DA">NHU CẦU</a>
+                            <!--<a class="btnpayment2 button" href="#" ng-click="popup()" ng-click="searchContent2();" style="color:#fff; font-size:13px; background:#4862A3">FACEBOOK</a>
+                            <a class="btnpayment button" href="#" ng-click="popup()" style="color:#fff; margin-right:0px; background:#26C9DA">NHU CẦU</a>-->
                         </center>
     </div>
    </ion-content>
