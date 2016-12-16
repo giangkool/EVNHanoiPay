@@ -132,6 +132,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.utils', 'start
           }
         }
       })
+      .state('tab.success', {
+        url: '/success',
+        views: {
+          'mainContent': {
+            controller: 'SuccessCtrl',
+            templateUrl: 'templates/success.html'
+          }
+        }
+      })
       .state('tab.banklist', {
         url: '/list-bank/:customerid/:amount',
         views: {

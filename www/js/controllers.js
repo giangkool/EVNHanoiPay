@@ -388,8 +388,59 @@ $scope.catalogs = contentService.listCatalogs();
         // }catch(ex){}
     };  
 })
-.controller('PaymentDetailCtrl',function ($scope, $localstorage, $ionicLoading, $location, $window, $stateParams, $state, apiService, contentService){
+.controller('PaymentDetailCtrl',function ($scope, $localstorage, $ionicLoading, $location, $window, $stateParams, $state, apiService, contentService,  $ionicPopup, $timeout){
     var _Id = $localstorage.getObject('cusId');
+        if(_Id)
+        {
+            $ionicLoading.show({
+                template: '<ion-spinner icon="bubbles"></ion-spinner><br/>Đang tải dữ liệu'
+            });
+            $scope.invoices = contentService.GetinvoiceDetail(_Id);
+            console.log($scope.invoices);
+            if ($scope.invoices) {
+                $ionicLoading.hide();
+            }
+        }
+
+        // Triggered on a button click, or some other target
+        $scope.showPopup = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<input type="number" ng-model="data.otp">',
+            title: 'Nhập mã OTP của bạn',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel' },
+            {
+                text: '<b>OKay</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    if (!$scope.data.otp) {
+                        //don't allow the user to close unless he enters wifi password
+                        e.preventDefault();
+                    } else {
+                        return $scope.data.otp;
+                    }
+                }
+            }
+            ]
+        });
+
+        myPopup.then(function(res) {
+            console.log('OTP', res);
+            $state.go('tab.success', {}, { reload: true });
+        });
+
+        // $timeout(function() {
+        //     myPopup.close(); //close the popup after 3 seconds for some reason
+        // }, 3000);
+        };
+})
+.controller('SuccessCtrl',function($scope, $state, apiService, $localstorage,$ionicLoading, $location, $window, $stateParams, contentService, $sce){
+        var _Id = $localstorage.getObject('cusId');
         if(_Id)
         {
             $ionicLoading.show({
