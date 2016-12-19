@@ -402,8 +402,73 @@ $scope.catalogs = contentService.listCatalogs();
             }
         }
 
-        // Triggered on a button click, or some other target
-        $scope.showPopup = function() {
+        //Get credit value
+        $scope.showCredit = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<input type="number" placeholder="Số Thẻ" ng-model="data.cardnumber"> <br/> <input type="text" placeholder="Họ Tên Chủ Thẻ" ng-model="data.fullname"> <br/> <input type="number" placeholder="Ngày Hết Hạn" Style="Width:47%; display: table-caption;" ng-model="data.day"> / <input type="number" placeholder="Tháng Hết Hạn" Style="Width:47%; display: table-caption;" ng-model="data.month"> ',
+            title: 'Thông Tin Thẻ Credit',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel',
+                onTap: function(){
+                    myPopup.close();
+                }
+            },
+            {
+                text: '<b>OKay</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    if (!$scope.data.cardnumber || !$scope.data.fullname || !$scope.data.day || !$scope.data.month) {
+                        $scope.Alerts();
+                        e.preventDefault();
+                    } else {
+                        $scope.showOtp();
+                    }
+                }
+            }
+            ]
+        });
+        };
+
+        //Get Account value
+        $scope.showAccount = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<ion-radio ng-model="data.acc" value="000123243">TK: 000123243 - VCB</ion-radio>, <ion-radio ng-model="data.acc" value="010023234">TK: 010023234 - NCB</ion-radio>',
+            title: 'Chọn Tài Khoản Thanh Toán',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel',
+                onTap: function(){
+                    myPopup.close();
+                }
+            },
+            {
+                text: '<b>OKay</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    if (!$scope.data.acc) {
+                        $scope.Alerts();
+                        e.preventDefault();
+                    } else {
+                        console.log('Account', $scope.data.acc);
+                        $scope.showOtp();
+                    }
+                }
+            }
+            ]
+        });
+        };
+
+        // Get OTP value
+        $scope.showOtp = function() {
         $scope.data = {};
 
         // An elaborate, custom popup
@@ -413,30 +478,42 @@ $scope.catalogs = contentService.listCatalogs();
             // subTitle: 'Please use normal things',
             scope: $scope,
             buttons: [
-            { text: 'Cancel' },
+            { text: 'Cancel' ,
+                onTap: function(){
+                    myPopup.close();
+                }
+            },
             {
                 text: '<b>OKay</b>',
                 type: 'button-positive',
                 onTap: function(e) {
                     if (!$scope.data.otp) {
-                        //don't allow the user to close unless he enters wifi password
+                        $scope.Alerts();
                         e.preventDefault();
                     } else {
-                        return $scope.data.otp;
+                        console.log($scope.data.otp);
+                        $state.go('tab.success', {}, { reload: true });
+                        // return $scope.data.otp;
                     }
                 }
             }
             ]
         });
+        };
 
-        myPopup.then(function(res) {
-            console.log('OTP', res);
-            $state.go('tab.success', {}, { reload: true });
+        //Alert error
+        // Get OTP value
+        $scope.Alerts = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<center><h5 Style="color:red"> Vui Lòng Nhập Thông Tin ! </h5> </center>',
+            title: 'Thông Báo',
         });
-
-        // $timeout(function() {
-        //     myPopup.close(); //close the popup after 3 seconds for some reason
-        // }, 3000);
+        $timeout(function() {
+            myPopup.close();
+        }, 2000);
         };
 })
 .controller('SuccessCtrl',function($scope, $state, apiService, $localstorage,$ionicLoading, $location, $window, $stateParams, contentService, $sce){
@@ -776,6 +853,9 @@ $scope.catalogs = contentService.listCatalogs();
 })
 .controller('AccountCtrl', function ($scope, $localstorage, $state, $cordovaAppVersion) {
     $scope.user_info = $localstorage.getObject('user');
+    $scope.backtopayment = function(){
+             $state.go('tab.payment', {}, { reload: true });
+        };
     //   $cordovaAppVersion.getVersionNumber().then(function (version) {
     // 			 $scope.version_info = "v." + version; 
     // 		});

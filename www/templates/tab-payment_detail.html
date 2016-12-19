@@ -38,11 +38,11 @@
                     </table>
                          <center ng-hide="invoices.data.status == 'paid'">
                             <img src="img/color-stripe.jpg" style="margin:auto; width:300px; display:block; margin-bottom:5px; margin-top:15px">
-                            <a class="btnpayment button" ng-click="showPopup()" style="color:#fff; margin-right:3px; margin-left:-1px">TK Bank</a>
+                            <a class="btnpayment button" ng-click="showAccount()" style="color:#fff; margin-right:3px; margin-left:-1px">TK Bank</a>
                             <!--href="#/tab/list-bank"-->
                             <!--<a class="btnpayment2 button" href="#/tab/list-bank/{{invoices.data.customer._id}}/{{invoices.data.payment.debt_amount}}" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
-                            <a class="btnpayment2 button" ng-click="showPopup()" style="color:#fff">ATM</a>
-                            <a class="btnpayment button" ng-click="showPopup()" style="color:#fff; background:#43753A">CREDIT</a>
+                            <a class="btnpayment2 button" ng-click="showOtp()" style="color:#fff">ATM</a>
+                            <a class="btnpayment button" ng-click="showCredit()" style="color:#fff; background:#43753A">CREDIT</a>
                             <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
                         </center>
                         <center ng-hide="invoices.data.status == 'paid'">

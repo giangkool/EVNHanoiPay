@@ -1,4 +1,13 @@
-<ion-view view-title="<center>Thông Tin Giao Dịch</center>" hide-back-button="true"  hide-nav-bar="false" hide-tabs="true" cache-view="false" ng-controller="AccountCtrl">
+<!--<style>
+    .bar-header {
+        background: #322C82;
+    }
+</style>-->
+<ion-view view-title="<center>Thông Tin Giao Dịch</center>" hide-back-button="false"  hide-nav-bar="false" hide-tabs="true" cache-view="false" ng-controller="AccountCtrl">
+  <ion-nav-bar style="color: #fff">
+    <ion-nav-back-button ng-click="backtopayment()">
+    </ion-nav-back-button>
+  </ion-nav-bar>
   <ion-content class="padding">
           
            <table style="padding:1px">

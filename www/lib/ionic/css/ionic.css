@@ -4051,6 +4051,7 @@ a.subdued {
   .bar .buttons.secondary-buttons {
     display: inherit; }
   .bar .buttons span {
+    color:#fff;
     display: inline-block; }
   .bar .buttons-left span {
     margin-right: 5px;
@@ -4277,6 +4278,7 @@ a.subdued {
     background: none; }
 
 .bar-header {
+  background:#322C82;
   top: 0;
   border-top-width: 0;
   border-bottom-width: 1px; }
@@ -8076,6 +8078,7 @@ progress {
     left: -6px;
     content: ' '; }
   .button .icon {
+    color:#fff;
     vertical-align: top;
     pointer-events: none; }
   .button .icon:before,
