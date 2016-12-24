@@ -402,14 +402,47 @@ $scope.catalogs = contentService.listCatalogs();
             }
         }
 
-        //Get credit value
-        $scope.showCredit = function() {
+        //Get list bank value
+        $scope.showListbank = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        $scope.myPopup = $ionicPopup.show({
+            template: '<center style="margin-top:12px"><a ng-click="showAccount()" style="margin-right:15px ;color:#008FFF; border: 1px solid #008FFF; border-radius:8px; padding-top:60px ; padding-left:2px; padding-right:2px; -webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);  margin-bottom:-5px;"> <img src="img/bank/vietcombank.jpeg" width="70px" height="70px"></a> <a ng-click="showAccount()" style="margin-right:15px ;color:#008FFF; border: 1px solid #008FFF; padding-top:60px; border-radius:8px; padding-top:60px ; padding-left:2px; padding-right:2px; -webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);  margin-bottom:-5px;"> <img src="img/bank/bidv.jpg" width="70px" height="70px"></a> <a ng-click ="showAccount()" style="color:#008FFF; border: 1px solid #008FFF; padding-top:60px; border-radius:8px; padding-top:60px ; padding-left:2px; padding-right:2px; -webkit-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);-moz-box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);box-shadow: 0px 14px 24px -10px rgba(0,0,0,0.56);  margin-bottom:-5px;"> <img src="img/bank/eximbank.gif" width="70px" height="70px"></a> </center>', 
+            title: 'Chọn Ngân Hàng Thanh Toán',
+            cssClass: 'new-popup',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel',
+                onTap: function(){
+                    $scope.myPopup.close();
+                }
+            }
+            // {
+            //     text: '<b>OKay</b>',
+            //     type: 'button-positive',
+            //     onTap: function(e) {
+            //         if (!$scope.data.acardnumber || !$scope.data.afullname || !$scope.data.amonths || !$scope.data.ayears) {
+            //             $scope.Alerts();
+            //             e.preventDefault();
+            //         } else {
+            //             $scope.showAccount();
+            //         }
+            //     }
+            // }
+            ]
+        });
+        };
+
+        //Get atm value
+        $scope.showAtm = function() {
         $scope.data = {};
 
         // An elaborate, custom popup
         var myPopup = $ionicPopup.show({
-            template: '<input type="number" placeholder="Số Thẻ" ng-model="data.cardnumber"> <br/> <input type="text" placeholder="Họ Tên Chủ Thẻ" ng-model="data.fullname"> <br/> <input type="number" placeholder="Ngày Hết Hạn" Style="Width:47%; display: table-caption;" ng-model="data.day"> / <input type="number" placeholder="Tháng Hết Hạn" Style="Width:47%; display: table-caption;" ng-model="data.month"> ',
-            title: 'Thông Tin Thẻ Credit',
+            template: '<input type="number" placeholder="Số Thẻ" ng-model="data.acardnumber"> <br/> <input type="text" placeholder="Họ Tên Chủ Thẻ" ng-model="data.afullname"> <br/> <input type="number" placeholder="MM" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "2" min = "1" max = "12" Style="Width:22%; display: table-caption;" ng-model="data.amonths"> / <input type="number" placeholder="YY" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "2" min = "1" max = "99" Style="Width:22%; display: table-caption;" ng-model="data.ayears"> ', title: 'Thông Tin Thẻ Atm',
+            cssClass: 'new-popup',
             // subTitle: 'Please use normal things',
             scope: $scope,
             buttons: [
@@ -422,7 +455,7 @@ $scope.catalogs = contentService.listCatalogs();
                 text: '<b>OKay</b>',
                 type: 'button-positive',
                 onTap: function(e) {
-                    if (!$scope.data.cardnumber || !$scope.data.fullname || !$scope.data.day || !$scope.data.month) {
+                    if (!$scope.data.acardnumber || !$scope.data.afullname || !$scope.data.amonths || !$scope.data.ayears) {
                         $scope.Alerts();
                         e.preventDefault();
                     } else {
@@ -434,8 +467,41 @@ $scope.catalogs = contentService.listCatalogs();
         });
         };
 
+        //Get credit value
+        $scope.showCredit = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+         myPopup = $ionicPopup.show({
+            template: '<input type="number" placeholder="Số Thẻ" ng-model="data.cardnumber"> <br/> <input type="text" placeholder="Họ Tên Chủ Thẻ" ng-model="data.fullname"> <br/> <input type="number" placeholder="MM" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "2" min = "1" max = "12" Style="Width:22%; display: table-caption;" ng-model="data.months"> / <input type="number" placeholder="YY" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "2" min = "1" max = "99" Style="Width:22%; display: table-caption;" ng-model="data.years"> ', title: 'Thông Tin Thẻ Credit',
+            cssClass: 'new-popup',
+            // subTitle: 'Please use normal things',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel',
+                onTap: function(){
+                    myPopup.close();
+                }
+            },
+            {
+                text: '<b>OKay</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    if (!$scope.data.cardnumber || !$scope.data.fullname || !$scope.data.months || !$scope.data.years) {
+                        $scope.Alerts();
+                        e.preventDefault();
+                    } else {
+                        $scope.showCvv();
+                    }
+                }
+            }
+            ]
+        });
+        };
+
         //Get Account value
-        $scope.showAccount = function() {
+        $scope.showAccount = function(bank) {
+        $scope.myPopup.close();
         $scope.data = {};
 
         // An elaborate, custom popup
@@ -468,14 +534,50 @@ $scope.catalogs = contentService.listCatalogs();
         };
 
         // Get OTP value
+        $scope.showCvv = function() {
+        $scope.data = {};
+
+        // An elaborate, custom popup
+        var myPopup = $ionicPopup.show({
+            template: '<input type="number" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "4" min = "1" max = "9999" ng-model="data.cvv">',
+            title: 'Nhập mã CVV của bạn',
+            // subTitle: 'Please use normal things',
+            cssClass: 'new-popup',
+            scope: $scope,
+            buttons: [
+            { text: 'Cancel' ,
+                onTap: function(){
+                    myPopup.close();
+                }
+            },
+            {
+                text: '<b>OKay</b>',
+                type: 'button-positive',
+                onTap: function(e) {
+                    if (!$scope.data.cvv) {
+                        $scope.Alerts();
+                        e.preventDefault();
+                    } else {
+                        console.log($scope.data.cvv);
+                        $state.go('tab.success', {}, { reload: true });
+                        // return $scope.data.otp;
+                    }
+                }
+            }
+            ]
+        });
+        };
+
+        // Get OTP value
         $scope.showOtp = function() {
         $scope.data = {};
 
         // An elaborate, custom popup
         var myPopup = $ionicPopup.show({
-            template: '<input type="number" ng-model="data.otp">',
+            template: '<input type="number" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" maxlength = "6" min = "1" max = "999999" ng-model="data.otp">',
             title: 'Nhập mã OTP của bạn',
             // subTitle: 'Please use normal things',
+            cssClass: 'new-popup',
             scope: $scope,
             buttons: [
             { text: 'Cancel' ,
@@ -508,8 +610,9 @@ $scope.catalogs = contentService.listCatalogs();
 
         // An elaborate, custom popup
         var myPopup = $ionicPopup.show({
-            template: '<center><h5 Style="color:red"> Vui Lòng Nhập Thông Tin ! </h5> </center>',
+            template: '<center><h5 Style="color:red; text-transform: uppercase; font-size:14px; font-weight:600"> Vui Lòng Nhập Thông Tin Chính Xác ! </h5> </center>',
             title: 'Thông Báo',
+            cssClass: 'new-popup'
         });
         $timeout(function() {
             myPopup.close();

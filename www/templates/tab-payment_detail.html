@@ -1,3 +1,40 @@
+<style>
+     .new-popup .popup{
+         width:300px;
+         background: #fff;
+    }
+    .new-popup .popup-title{
+        text-transform: uppercase;
+        color: darkred;
+        font-weight: bold;
+    }
+    .new-popup input{
+        padding-left: 5px;
+        border: 1px solid #929292;
+        border-radius: 5px;
+        color: #322C82;
+        font-weight: bold;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+</style>
+<script>
+  function maxLengthCheck(object) {
+    if (object.value.length > object.maxLength)
+      object.value = object.value.slice(0, object.maxLength)
+  }
+    
+  function isNumeric (evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode (key);
+    var regex = /[0-9]|\./;
+    if ( !regex.test(key) ) {
+      theEvent.returnValue = false;
+      if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }
+</script>
 <ion-view view-title="<center>Chi Tiết Thanh Toán</center>" hide-back-button="false" cache-view='false'>
    <ion-content class="padding">
     <!--<hr/>-->
@@ -38,10 +75,10 @@
                     </table>
                          <center ng-hide="invoices.data.status == 'paid'">
                             <img src="img/color-stripe.jpg" style="margin:auto; width:300px; display:block; margin-bottom:5px; margin-top:15px">
-                            <a class="btnpayment button" ng-click="showAccount()" style="color:#fff; margin-right:3px; margin-left:-1px">TK Bank</a>
+                            <a class="btnpayment button" ng-click="showListbank()" style="color:#fff; margin-right:3px; margin-left:-1px">TK Bank</a>
                             <!--href="#/tab/list-bank"-->
                             <!--<a class="btnpayment2 button" href="#/tab/list-bank/{{invoices.data.customer._id}}/{{invoices.data.payment.debt_amount}}" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
-                            <a class="btnpayment2 button" ng-click="showOtp()" style="color:#fff">ATM</a>
+                            <a class="btnpayment2 button" ng-click="showAtm()" style="color:#fff">ATM</a>
                             <a class="btnpayment button" ng-click="showCredit()" style="color:#fff; background:#43753A">CREDIT</a>
                             <!--<a class="btnpayment2 button" href="#/app/epayment-tappaytab/{{user.customerId}}/{{invoices.data.payment.debt_amount}}/2" ng-click="searchContent2();" style="color:#fff">ATM</a>-->
                         </center>
