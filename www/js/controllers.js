@@ -509,6 +509,7 @@ $scope.catalogs = contentService.listCatalogs();
             template: '<ion-radio ng-model="data.acc" value="000123243">TK: 000123243 - VCB</ion-radio>, <ion-radio ng-model="data.acc" value="010023234">TK: 010023234 - NCB</ion-radio>',
             title: 'Chọn Tài Khoản Thanh Toán',
             // subTitle: 'Please use normal things',
+            cssClass: 'new-popup',
             scope: $scope,
             buttons: [
             { text: 'Cancel',
